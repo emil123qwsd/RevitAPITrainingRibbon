@@ -24,12 +24,20 @@ namespace RevitAPITrainingRibbon
             application.CreateRibbonTab(tabName);
             string utilsFolderPath = @"C:\Program Files\RevitAPITraining\";
 
-            var panel = application.CreateRibbonPanel(tabName, "Трубы");
+            var panel = application.CreateRibbonPanel(tabName, "Задача 5.1");
 
-            var button = new PushButtonData("Система", "Смена системы труб", 
-                Path.Combine(utilsFolderPath, "RevitAPITrainingUI.dll"),
-                "RevitAPITrainingUI.Main");
+            var button = new PushButtonData("Система", "Объем стен", 
+                Path.Combine(utilsFolderPath, "RevitAPITrainingSelection2.dll"),
+                "RevitAPITrainingSelection2.Main");
+            var button2 = new PushButtonData("Система", "Количество дверей",
+                Path.Combine(utilsFolderPath, "RevitAPITrainingSelectionDoor.dll"),
+                "RevitAPITrainingSelectionDoor.Main");
+            var button3 = new PushButtonData("Система", "Количество труб",
+                Path.Combine(utilsFolderPath, "RevitAPITrainingSelectionPipe.dll"),
+                "RevitAPITrainingSelectionPipe.Main");
             panel.AddItem(button);
+            panel.AddItem(button2);
+            panel.AddItem(button3);
 
             return Result.Succeeded;
         }
